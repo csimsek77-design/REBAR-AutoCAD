@@ -340,10 +340,10 @@
         (z-pos (+ z-bottom (* i z-step)))
         (pts (list
           (list (+ (car base-point) cover) (+ (cadr base-point) cover) z-pos)
-          (list (- (car base-point) cover (+ (cadr base-point) length) z-pos)
-          (list (- (car base-point) cover - (cadr base-point) cover) z-pos)
-          (list (+ (car base-point) cover - (cadr base-point) cover) z-pos)
-          (list (+ (car base-point) cover (+ (cadr base-point) cover) z-pos)
+          (list (- (car base-point) cover) (+ (cadr base-point) length) z-pos)
+          (list (- (car base-point) cover) (- (cadr base-point) cover) z-pos)
+          (list (+ (car base-point) cover) (- (cadr base-point) cover) z-pos)
+          (list (+ (car base-point) cover) (+ (cadr base-point) cover) z-pos)
         ))
         )
         (command "_.PLINE" pts "")
@@ -790,4 +790,3 @@
 
 (princ "\nREBAR-Kolon.lsp yüklendi.\n")
 (princ)
-))

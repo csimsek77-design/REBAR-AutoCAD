@@ -208,33 +208,19 @@
 
 (princ "\nModüller yükleniyor...")
 
-;; Modül dosyalarını sadece yüklenmediyse yükle
+;; Modülleri kontrol et (ACAD.LSP tarafından yüklenmiş olmalı)
+;; Eğer yüklenmediyse, uyarı ver
 (if (not (boundp 'C:REBAR-FOOTING))
-  (if (findfile "REBAR-Temel.lsp")
-    (load "REBAR-Temel")
-    (princ "\nUYARI: REBAR-Temel.lsp bulunamadı!")
-  )
+  (princ "\nUYARI: REBAR-Temel.lsp yüklenmedi! Lütfen ACAD.LSP ile yükleyin.")
 )
-
 (if (not (boundp 'C:REBAR-COLUMN))
-  (if (findfile "REBAR-Kolon.lsp")
-    (load "REBAR-Kolon")
-    (princ "\nUYARI: REBAR-Kolon.lsp bulunamadı!")
-  )
+  (princ "\nUYARI: REBAR-Kolon.lsp yüklenmedi! Lütfen ACAD.LSP ile yükleyin.")
 )
-
 (if (not (boundp 'C:REBAR-BEAM))
-  (if (findfile "REBAR-Kiris.lsp")
-    (load "REBAR-Kiris")
-    (princ "\nUYARI: REBAR-Kiris.lsp bulunamadı!")
-  )
+  (princ "\nUYARI: REBAR-Kiris.lsp yüklenmedi! Lütfen ACAD.LSP ile yükleyin.")
 )
-
 (if (not (boundp 'C:REBAR-SLAB))
-  (if (findfile "REBAR-Doseme.lsp")
-    (load "REBAR-Doseme")
-    (princ "\nUYARI: REBAR-Doseme.lsp bulunamadı!")
-  )
+  (princ "\nUYARI: REBAR-Doseme.lsp yüklenmedi! Lütfen ACAD.LSP ile yükleyin.")
 )
 
 ;; ============================================
