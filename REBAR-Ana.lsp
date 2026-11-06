@@ -208,25 +208,33 @@
 
 (princ "\nModüller yükleniyor...")
 
-;; Modül dosyalarını yükle
-(if (findfile "REBAR-Temel.lsp")
-  (load "REBAR-Temel")
-  (princ "\nUYARI: REBAR-Temel.lsp bulunamadı!")
+;; Modül dosyalarını sadece yüklenmediyse yükle
+(if (not (boundp 'C:REBAR-FOOTING))
+  (if (findfile "REBAR-Temel.lsp")
+    (load "REBAR-Temel")
+    (princ "\nUYARI: REBAR-Temel.lsp bulunamadı!")
+  )
 )
 
-(if (findfile "REBAR-Kolon.lsp")
-  (load "REBAR-Kolon")
-  (princ "\nUYARI: REBAR-Kolon.lsp bulunamadı!")
+(if (not (boundp 'C:REBAR-COLUMN))
+  (if (findfile "REBAR-Kolon.lsp")
+    (load "REBAR-Kolon")
+    (princ "\nUYARI: REBAR-Kolon.lsp bulunamadı!")
+  )
 )
 
-(if (findfile "REBAR-Kiris.lsp")
-  (load "REBAR-Kiris")
-  (princ "\nUYARI: REBAR-Kiris.lsp bulunamadı!")
+(if (not (boundp 'C:REBAR-BEAM))
+  (if (findfile "REBAR-Kiris.lsp")
+    (load "REBAR-Kiris")
+    (princ "\nUYARI: REBAR-Kiris.lsp bulunamadı!")
+  )
 )
 
-(if (findfile "REBAR-Doseme.lsp")
-  (load "REBAR-Doseme")
-  (princ "\nUYARI: REBAR-Doseme.lsp bulunamadı!")
+(if (not (boundp 'C:REBAR-SLAB))
+  (if (findfile "REBAR-Doseme.lsp")
+    (load "REBAR-Doseme")
+    (princ "\nUYARI: REBAR-Doseme.lsp bulunamadı!")
+  )
 )
 
 ;; ============================================
