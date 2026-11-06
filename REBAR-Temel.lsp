@@ -887,7 +887,6 @@
   (princ (strcat "\nX Doğrultusu: " (itoa (nth 10 result)) " adet Ø" (itoa (nth 4 result))))
   (princ (strcat "\nY Doğrultusu: " (itoa (nth 11 result)) " adet Ø" (itoa (nth 5 result))))
   (princ)
-)
 
 ;; ============================================
 ;; 11. SÜREKLİ TEMEL FONKSİYONU
@@ -944,6 +943,7 @@
     )
     (princ "\nAPPDATA değişkeni bulunamadı.")
   )
+)
 
 (princ "\nREBAR-Temel.lsp v1.1 yüklendi.\n")
 (princ)
