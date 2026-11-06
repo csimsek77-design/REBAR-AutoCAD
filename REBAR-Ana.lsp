@@ -176,9 +176,8 @@
 )
 
 (defun get-positive-number (prompt default)
-  (let ((value (getreal (strcat prompt " <" (rtos default) ">: "))))
-    (if (or (not value) (<= value 0)) default value)
-  )
+  (setq value (getreal (strcat prompt " <" (rtos default) ">: ")))
+  (if (or (not value) (<= value 0)) default value)
 )
 
 (defun select-diameter (prompt)
@@ -209,26 +208,26 @@
 
 (princ "\nModüller yükleniyor...")
 
-;; Modül dosyalarını yükle - AutoCAD'in arama yolunu kullan
-(defun load-rebar-module (filename)
-  (let ((filepath (findfile filename)))
-    (if filepath
-      (progn
-        (load filepath)
-        T
-      )
-      (progn
-        (princ (strcat "\nUYARI: " filename " bulunamadı!"))
-        nil
-      )
-    )
-  )
+;; Modül dosyalarını yükle
+(if (findfile "REBAR-Temel.lsp")
+  (load "REBAR-Temel")
+  (princ "\nUYARI: REBAR-Temel.lsp bulunamadı!")
 )
 
-(load-rebar-module "REBAR-Temel.lsp")
-(load-rebar-module "REBAR-Kolon.lsp")
-(load-rebar-module "REBAR-Kiris.lsp")
-(load-rebar-module "REBAR-Doseme.lsp")
+(if (findfile "REBAR-Kolon.lsp")
+  (load "REBAR-Kolon")
+  (princ "\nUYARI: REBAR-Kolon.lsp bulunamadı!")
+)
+
+(if (findfile "REBAR-Kiris.lsp")
+  (load "REBAR-Kiris")
+  (princ "\nUYARI: REBAR-Kiris.lsp bulunamadı!")
+)
+
+(if (findfile "REBAR-Doseme.lsp")
+  (load "REBAR-Doseme")
+  (princ "\nUYARI: REBAR-Doseme.lsp bulunamadı!")
+)
 
 ;; ============================================
 ;; 4. ANA MENÜ FONKSİYONU

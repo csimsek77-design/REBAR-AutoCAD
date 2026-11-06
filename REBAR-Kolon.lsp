@@ -169,9 +169,8 @@
 
 (if (not (boundp 'get-positive-number))
   (defun get-positive-number (prompt default)
-    (let ((value (getreal (strcat prompt " <" (rtos default) ">: "))))
-      (if (or (not value) (<= value 0)) default value)
-    )
+    (setq value (getreal (strcat prompt " <" (rtos default) ">: ")))
+    (if (or (not value) (<= value 0)) default value)
   )
 )
 
