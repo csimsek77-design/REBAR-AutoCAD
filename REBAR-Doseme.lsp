@@ -522,10 +522,8 @@
                  " Ø" (itoa (nth 4 result)) "/" (itoa (nth 5 result))))
   (if (> (nth 3 result) 1)
     (princ (strcat "\nÜst Donatı: " (itoa (nth 14 result)) "×" (itoa (nth 15 result)) 
-                   " Ø" (itoa (nth 6 result)) "/" (itoa (nth 7 result))))
-  )
+                   " Ø" (itoa (nth 6 result)) "/" (itoa (nth 7 result)))))
   (princ)
-)
 
 ;; ============================================
 ;; 10. OTOMATİK YÜKLEME VE KOMUTLAR

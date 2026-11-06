@@ -565,7 +565,6 @@
   (princ (strcat "\nÜst Donatı: " (itoa (nth 11 result)) "×Ø" (itoa (nth 5 result))))
   (princ (strcat "\nEtriye: " (itoa (nth 12 result)) " adet Ø" (itoa (nth 6 result))))
   (princ)
-)
 
 ;; ============================================
 ;; 10. OTOMATİK YÜKLEME VE KOMUTLAR

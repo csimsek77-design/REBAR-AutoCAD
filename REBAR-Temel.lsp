@@ -944,7 +944,6 @@
     )
     (princ "\nAPPDATA değişkeni bulunamadı.")
   )
-)
 
 (princ "\nREBAR-Temel.lsp v1.1 yüklendi.\n")
 (princ)
