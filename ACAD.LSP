@@ -1,22 +1,14 @@
 ;;
-;; ACAD.LSP - AutoCAD Otomatik Yükleme Dosyası
+;; ACAD.LSP - REBAR otomatik yükleme örneği
 ;; ============================================
-;; Bu dosya, AutoCAD başladığında REBAR modüllerini otomatik yükler
+;; Bu satırları kendi acaddoc.lsp dosyanıza eklemeniz önerilir
+;; (acaddoc.lsp her çizim açıldığında yüklenir; ACAD.LSP ise varsayılan
+;; olarak AutoCAD oturumu başında yalnızca bir kez yüklenir).
+;; Mevcut bir ACAD.LSP / acaddoc.lsp dosyanız varsa ÜZERİNE YAZMAYIN,
+;; aşağıdaki satırları ekleyin.
 ;; ============================================
-;;
 
-;; REBAR serisini yükle
 (if (findfile "REBAR-Ana.lsp")
   (load "REBAR-Ana.lsp")
-  (progn
-    ;; Eğer REBAR-Ana.lsp bulunamazsa, tek tek yükle
-    (if (findfile "REBAR-Temel.lsp") (load "REBAR-Temel.lsp"))
-    (if (findfile "REBAR-Kolon.lsp") (load "REBAR-Kolon.lsp"))
-    (if (findfile "REBAR-Kiris.lsp") (load "REBAR-Kiris.lsp"))
-    (if (findfile "REBAR-Doseme.lsp") (load "REBAR-Doseme.lsp"))
-  )
-)
-
-;; ACAD.LSP mesajı
-(princ "\nACAD.LSP: REBAR modülleri yüklendi. 'REBAR' komutunu kullanın.\n")
+  (princ "\nREBAR-Ana.lsp bulunamadı: klasörü destek yollarına ekleyin."))
 (princ)
